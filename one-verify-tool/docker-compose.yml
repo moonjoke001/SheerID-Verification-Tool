@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  one-verify:
+    build: .
+    image: one-verify-tool:latest
+    container_name: one-verify
+    environment:
+      - TZ=Asia/Shanghai
+    command: ["https://services.sheerid.com/verify/xxx?verificationId=abc123"]
+    # 使用代理示例（取消注释并修改）
+    # command: ["https://services.sheerid.com/verify/xxx?verificationId=abc123", "--proxy", "http://proxy:8080"]
+    restart: "no"
